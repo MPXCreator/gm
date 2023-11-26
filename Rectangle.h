@@ -17,7 +17,7 @@ namespace gm {
         double size;
     public:
         Rectangle();
-        Rectangle(Point leftTop, Point rightBottom);
+        Rectangle(const Point& leftTop, const Point& rightBottom);
         Rectangle(const Rectangle& rectangle);
         ~Rectangle();
         Point getLeftTop() const { return leftTop; }

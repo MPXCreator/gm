@@ -17,7 +17,7 @@ namespace gm {
         double size;
     public:
         Circle();
-        Circle(Point center, double radius);
+        Circle(const Point& center, double radius);
         Circle(const Circle& circle);
         ~Circle();
         double getRadius() const { return radius; }

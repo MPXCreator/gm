@@ -4,22 +4,32 @@
 
 #include "Plane.h"
 #include <iostream>
+#include <ctime>
+
+std::string logTimep() {
+    time_t now = time(nullptr);
+    tm *ltm = localtime(&now);
+    std::string time = "[" + std::to_string(1900 + ltm->tm_year) + "/" + std::to_string(1 + ltm->tm_mon) + "/" +
+                       std::to_string(ltm->tm_mday) + " " + std::to_string(ltm->tm_hour) + ":" +
+                       std::to_string(ltm->tm_min) + ":" + std::to_string(ltm->tm_sec) + "]";
+    return time;
+}
 
 namespace gm {
     Plane::Plane() : size(area()) {
-        std::clog << "Plane constructor called." << std::endl;
+        std::clog << "[FUNCTION] " << logTimep() << " " << "Plane constructor called." << std::endl;
     }
 
     Plane::Plane(const Plane &plane) : size(plane.size) {
-        std::clog << "Plane copy constructor called." << std::endl;
+        std::clog << "[FUNCTION] " << logTimep() << " " << "Plane copy constructor called." << std::endl;
     }
 
     Plane::~Plane() {
-        std::clog << "Plane destructor called." << std::endl;
+        std::clog << "[FUNCTION] " << logTimep() << " " << "Plane destructor called." << std::endl;
     }
 
     double Plane::area() {
-        std::clog << "Plane area called." << std::endl;
+        std::clog << "[FUNCTION] " << logTimep() << " " << "Plane area called." << std::endl;
         return 0;
     }
 
